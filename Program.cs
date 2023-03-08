@@ -9,7 +9,7 @@ namespace Linq
         static Random rnd = new Random();
         public static void Main(string[] args)
         {
-            
+            #region Работа на уроке
             var collection = new List<Product>();
             for (var i = 0; i < 10; i++)
             {
@@ -72,7 +72,7 @@ namespace Linq
                 Console.WriteLine(item);
             }
             
-            var union = array.Union(array2);                                                                //
+            var union = array.Union(array2);                                                               
             foreach (var item in union)
             {
                 Console.WriteLine(item);
@@ -88,7 +88,10 @@ namespace Linq
             var min = collection.Min(p => p.Energy);
             var max = collection.Max(p => p.Energy);
             var agregate = array.Aggregate((x, y) => x * y);
+            var first = collection.First(product => product.Energy == 10);                                        //в переменную запишеться первый product со значением 10
+            var elementAt = collection.ElementAt(5);                                                              //взять элемент по индексу
             Console.ReadLine();
+            #endregion
         }
     }
 }
