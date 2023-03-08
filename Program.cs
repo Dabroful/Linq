@@ -63,6 +63,31 @@ namespace Linq
 
             collection.Reverse();                                                                                       //разворачивает список
 
+            var all = collection.All(item => item.Energy == 10);
+            
+            var array = new int[]{ 1, 2, 3, 4, 5 };
+            var array2 = new int[]{ 3, 4, 5, 6};
+            foreach (var item in array)
+            {
+                Console.WriteLine(item);
+            }
+            
+            var union = array.Union(array2);                                                                //
+            foreach (var item in union)
+            {
+                Console.WriteLine(item);
+            }
+
+            var intersect = array.Intersect(array2);                                                       //то, где объединяются два массива
+            foreach (var item in intersect)
+            {
+                Console.WriteLine(item);
+            }
+
+            var sum = array.Sum();
+            var min = collection.Min(p => p.Energy);
+            var max = collection.Max(p => p.Energy);
+            var agregate = array.Aggregate((x, y) => x * y);
             Console.ReadLine();
         }
     }
